@@ -1,0 +1,12 @@
+name: BanYoSelf
+version: 1.0
+author: zeusallmighty11
+description: Ban yourself
+main: me.zeus.BanYoSelf.BanYoSelf
+commands:
+  banme:
+    description: Ban yourself
+    syntax: /banme
+  kickme:
+    description: Kick yourself
+    syntax: /kickme
