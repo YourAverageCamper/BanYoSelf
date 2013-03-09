@@ -2,6 +2,7 @@
 package me.zeus.BanYoSelf;
 
 
+import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -11,6 +12,7 @@ import org.bukkit.entity.Player;
 
 public class BanMeCommand implements CommandExecutor {
 
+    @SuppressWarnings("unused")
     private final BanYoSelf plugin;
 
     public BanMeCommand(final BanYoSelf plugin)
@@ -23,26 +25,12 @@ public class BanMeCommand implements CommandExecutor {
     {
         if (sender instanceof Player)
         {
-
             if (sender.hasPermission("BanYoSelf.Ban.Self"))
             {
-                ((Player) sender).kickPlayer("Well don't you feel stupid!");
+                ((Player) sender).kickPlayer(ChatColor.RED + "" + ChatColor.MAGIC + "HACKS HACKING HACKER");
                 ((Player) sender).setBanned(true);
             }
-
         }
         return false;
     }
-
-    void tryToKick(final Player p)
-    {
-        try
-        {
-            plugin.getServer().dispatchCommand(plugin.getServer().getConsoleSender(), "ban " + p.getName());
-        } catch (final NullPointerException npe)
-        {
-            System.out.println("Tried to kick player - doesn't exist! " + "(" + p.getName() + ")");
-        }
-    }
-
 }
